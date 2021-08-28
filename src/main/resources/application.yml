@@ -1,0 +1,26 @@
+server:
+  port: 8082
+spring:
+  profiles:
+    active: qa
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/dep
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show:
+      sql: true
+welcome:
+  message: Welcome to spring boot tutorial Ashish!!
+
+#Actuator features include and exclude
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
